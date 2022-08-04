@@ -320,6 +320,18 @@ namespace Velentr.AbstractShapes
         }
 
         /// <summary>
+        ///     Implicit cast that converts the given CircleM to a Circle.
+        /// </summary>
+        /// <param name="circle">   The circle. </param>
+        /// <returns>
+        ///     The result of the operation.
+        /// </returns>
+        public static implicit operator Circle(CircleM circle)
+        {
+            return new Circle(circle.X, circle.Y, circle.Radius);
+        }
+
+        /// <summary>
         ///     Implicit cast that converts the given Point to a Circle.
         /// </summary>
         ///
@@ -332,6 +344,80 @@ namespace Velentr.AbstractShapes
         {
             return new Circle(point, 1);
         }
+
+        /// <summary>
+        ///     Implicit cast that converts the given System.Drawing.Point to a Circle.
+        /// </summary>
+        ///
+        /// <param name="point">    The point. </param>
+        ///
+        /// <returns>
+        ///     The result of the operation.
+        /// </returns>
+        public static implicit operator Circle(System.Drawing.Point point)
+        {
+            return new Circle((PointI)point, 1);
+        }
+
+        /// <summary>
+        ///     Implicit cast that converts the given System.Drawing.PointF to a Circle.
+        /// </summary>
+        ///
+        /// <param name="point">    The point. </param>
+        ///
+        /// <returns>
+        ///     The result of the operation.
+        /// </returns>
+        public static implicit operator Circle(System.Drawing.PointF point)
+        {
+            return new Circle((PointI)point, 1);
+        }
+
+#if (MONOGAME || FNA)
+
+        /// <summary>
+        ///     Implicit cast that converts the given Microsoft.Xna.Framework.Point to a Circle.
+        /// </summary>
+        ///
+        /// <param name="point">    The point. </param>
+        ///
+        /// <returns>
+        /// The result of the operation.
+        /// </returns>
+        public static implicit operator Circle(Microsoft.Xna.Framework.Point point)
+        {
+            return new Circle((PointI)point, 1);
+        }
+
+        /// <summary>
+        ///     Implicit cast that converts the given Microsoft.Xna.Framework.Vector2 to a Circle.
+        /// </summary>
+        ///
+        /// <param name="vector">   The vector. </param>
+        ///
+        /// <returns>
+        ///     The result of the operation.
+        /// </returns>
+        public static implicit operator Circle(Microsoft.Xna.Framework.Vector2 vector)
+        {
+            return new Circle((PointI)vector, 1);
+        }
+
+        /// <summary>
+        ///     Implicit cast that converts the given Microsoft.Xna.Framework.Vector3 to a Circle.
+        /// </summary>
+        ///
+        /// <param name="vector">   The vector. </param>
+        ///
+        /// <returns>
+        ///     The result of the operation.
+        /// </returns>
+        public static implicit operator Circle(Microsoft.Xna.Framework.Vector3 vector)
+        {
+            return new Circle(vector.X, vector.Y, vector.Z);
+        }
+
+#endif
 
         /// <summary>
         ///     Implicit cast that converts the given Circle to a string.

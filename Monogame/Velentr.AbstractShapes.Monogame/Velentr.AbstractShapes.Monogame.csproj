@@ -33,6 +33,7 @@
   <ItemGroup>
     <Compile Include="..\..\Velentr.AbstractShapes\Circle.cs" Link="Circle.cs" />
     <Compile Include="..\..\Velentr.AbstractShapes\CircleD.cs" Link="CircleD.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\CircleM.cs" Link="CircleM.cs" />
     <Compile Include="..\..\Velentr.AbstractShapes\Dimensions.cs" Link="Dimensions.cs" />
     <Compile Include="..\..\Velentr.AbstractShapes\MathHelpers.cs" Link="MathHelpers.cs" />
     <Compile Include="..\..\Velentr.AbstractShapes\Point.cs" Link="Point.cs" />

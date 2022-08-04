@@ -3,30 +3,30 @@
 namespace Velentr.AbstractShapes
 {
     /// <summary>
-    ///     A circle using doubles.
+    ///     A circle d.
     /// </summary>
     [DebuggerDisplay("({X}, {Y})x{Radius}")]
-    public struct CircleD
+    public struct CircleM
     {
         /// <summary>
         ///     (Immutable) the zero.
         /// </summary>
-        public static readonly CircleD Zero = new CircleD(0, 0, 0);
+        public static readonly CircleM Zero = new CircleM(0, 0, 0);
 
         /// <summary>
         ///     (Immutable) the one.
         /// </summary>
-        public static readonly CircleD One = new CircleD(1, 1, 1);
+        public static readonly CircleM One = new CircleM(1, 1, 1);
 
         /// <summary>
         ///     (Immutable) the maximum value.
         /// </summary>
-        public static readonly CircleD MaxValue = new CircleD(double.MaxValue, double.MaxValue, double.MaxValue);
+        public static readonly CircleM MaxValue = new CircleM(double.MaxValue, double.MaxValue, double.MaxValue);
 
         /// <summary>
         ///     (Immutable) the minimum value.
         /// </summary>
-        public static readonly CircleD MinValue = new CircleD(double.MinValue, double.MinValue, double.MinValue);
+        public static readonly CircleM MinValue = new CircleM(double.MinValue, double.MinValue, double.MinValue);
 
         /// <summary>
         ///     The radius.
@@ -36,12 +36,12 @@ namespace Velentr.AbstractShapes
         /// <summary>
         ///     The X coordinate.
         /// </summary>
-        public double X;
+        public int X;
 
         /// <summary>
         ///     The Y coordinate.
         /// </summary>
-        public double Y;
+        public int Y;
 
         /// <summary>
         ///     Constructor.
@@ -49,7 +49,7 @@ namespace Velentr.AbstractShapes
         /// <param name="x">        The x coordinate. </param>
         /// <param name="y">        The y coordinate. </param>
         /// <param name="Radius">   The radius. </param>
-        public CircleD(int x, int y, int Radius)
+        public CircleM(int x, int y, int Radius)
         {
             this.X = x;
             this.Y = y;
@@ -62,10 +62,10 @@ namespace Velentr.AbstractShapes
         /// <param name="x">        The x coordinate. </param>
         /// <param name="y">        The y coordinate. </param>
         /// <param name="Radius">   The radius. </param>
-        public CircleD(long x, long y, long Radius)
+        public CircleM(long x, long y, long Radius)
         {
-            this.X = x;
-            this.Y = y;
+            this.X = (int) x;
+            this.Y = (int) y;
             this.Radius = Radius;
         }
 
@@ -75,10 +75,10 @@ namespace Velentr.AbstractShapes
         /// <param name="x">        The x coordinate. </param>
         /// <param name="y">        The y coordinate. </param>
         /// <param name="Radius">   The radius. </param>
-        public CircleD(float x, float y, float Radius)
+        public CircleM(float x, float y, float Radius)
         {
-            this.X = x;
-            this.Y = y;
+            this.X = (int) x;
+            this.Y = (int) y;
             this.Radius = Radius;
         }
 
@@ -88,10 +88,10 @@ namespace Velentr.AbstractShapes
         /// <param name="x">        The x coordinate. </param>
         /// <param name="y">        The y coordinate. </param>
         /// <param name="Radius">   The radius. </param>
-        public CircleD(double x, double y, double Radius)
+        public CircleM(double x, double y, double Radius)
         {
-            this.X = x;
-            this.Y = y;
+            this.X = (int) x;
+            this.Y = (int) y;
             this.Radius = Radius;
         }
 
@@ -99,7 +99,7 @@ namespace Velentr.AbstractShapes
         ///     Copy constructor.
         /// </summary>
         /// <param name="circle">   The circle. </param>
-        public CircleD(CircleD circle)
+        public CircleM(CircleM circle)
         {
             this.X = circle.X;
             this.Y = circle.Y;
@@ -111,7 +111,55 @@ namespace Velentr.AbstractShapes
         /// </summary>
         /// <param name="coordinates">  The coordinates. </param>
         /// <param name="Radius">       The radius. </param>
-        public CircleD(Point coordinates, int Radius)
+        public CircleM(Point coordinates, int Radius)
+        {
+            this.X = coordinates.IntX;
+            this.Y = coordinates.IntY;
+            this.Radius = Radius;
+        }
+
+        /// <summary>
+        ///     Constructor.
+        /// </summary>
+        /// <param name="coordinates">  The coordinates. </param>
+        /// <param name="Radius">       The radius. </param>
+        public CircleM(Point coordinates, long Radius)
+        {
+            this.X = coordinates.IntX;
+            this.Y = coordinates.IntY;
+            this.Radius = Radius;
+        }
+
+        /// <summary>
+        ///     Constructor.
+        /// </summary>
+        /// <param name="coordinates">  The coordinates. </param>
+        /// <param name="Radius">       The radius. </param>
+        public CircleM(Point coordinates, float Radius)
+        {
+            this.X = coordinates.IntX;
+            this.Y = coordinates.IntY;
+            this.Radius = Radius;
+        }
+
+        /// <summary>
+        ///     Constructor.
+        /// </summary>
+        /// <param name="coordinates">  The coordinates. </param>
+        /// <param name="Radius">       The radius. </param>
+        public CircleM(Point coordinates, double Radius)
+        {
+            this.X = coordinates.IntX;
+            this.Y = coordinates.IntY;
+            this.Radius = Radius;
+        }
+
+        /// <summary>
+        ///     Constructor.
+        /// </summary>
+        /// <param name="coordinates">  The coordinates. </param>
+        /// <param name="Radius">       The radius. </param>
+        public CircleM(PointI coordinates, int Radius)
         {
             this.X = coordinates.X;
             this.Y = coordinates.Y;
@@ -123,7 +171,7 @@ namespace Velentr.AbstractShapes
         /// </summary>
         /// <param name="coordinates">  The coordinates. </param>
         /// <param name="Radius">       The radius. </param>
-        public CircleD(Point coordinates, long Radius)
+        public CircleM(PointI coordinates, long Radius)
         {
             this.X = coordinates.X;
             this.Y = coordinates.Y;
@@ -135,7 +183,7 @@ namespace Velentr.AbstractShapes
         /// </summary>
         /// <param name="coordinates">  The coordinates. </param>
         /// <param name="Radius">       The radius. </param>
-        public CircleD(Point coordinates, float Radius)
+        public CircleM(PointI coordinates, float Radius)
         {
             this.X = coordinates.X;
             this.Y = coordinates.Y;
@@ -147,55 +195,7 @@ namespace Velentr.AbstractShapes
         /// </summary>
         /// <param name="coordinates">  The coordinates. </param>
         /// <param name="Radius">       The radius. </param>
-        public CircleD(Point coordinates, double Radius)
-        {
-            this.X = coordinates.X;
-            this.Y = coordinates.Y;
-            this.Radius = Radius;
-        }
-
-        /// <summary>
-        ///     Constructor.
-        /// </summary>
-        /// <param name="coordinates">  The coordinates. </param>
-        /// <param name="Radius">       The radius. </param>
-        public CircleD(PointI coordinates, int Radius)
-        {
-            this.X = coordinates.X;
-            this.Y = coordinates.Y;
-            this.Radius = Radius;
-        }
-
-        /// <summary>
-        ///     Constructor.
-        /// </summary>
-        /// <param name="coordinates">  The coordinates. </param>
-        /// <param name="Radius">       The radius. </param>
-        public CircleD(PointI coordinates, long Radius)
-        {
-            this.X = coordinates.X;
-            this.Y = coordinates.Y;
-            this.Radius = Radius;
-        }
-
-        /// <summary>
-        ///     Constructor.
-        /// </summary>
-        /// <param name="coordinates">  The coordinates. </param>
-        /// <param name="Radius">       The radius. </param>
-        public CircleD(PointI coordinates, float Radius)
-        {
-            this.X = coordinates.X;
-            this.Y = coordinates.Y;
-            this.Radius = Radius;
-        }
-
-        /// <summary>
-        ///     Constructor.
-        /// </summary>
-        /// <param name="coordinates">  The coordinates. </param>
-        /// <param name="Radius">       The radius. </param>
-        public CircleD(PointI coordinates, double Radius)
+        public CircleM(PointI coordinates, double Radius)
         {
             this.X = coordinates.X;
             this.Y = coordinates.Y;
@@ -210,9 +210,9 @@ namespace Velentr.AbstractShapes
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static CircleD operator +(CircleD value1, CircleD value2)
+        public static CircleM operator +(CircleM value1, CircleM value2)
         {
-            return new CircleD(value1.X + value2.X, value1.Y + value2.Y, value1.Radius + value2.Radius);
+            return new CircleM(value1.X + value2.X, value1.Y + value2.Y, value1.Radius + value2.Radius);
         }
 
         /// <summary>
@@ -223,9 +223,9 @@ namespace Velentr.AbstractShapes
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static CircleD operator -(CircleD value1, CircleD value2)
+        public static CircleM operator -(CircleM value1, CircleM value2)
         {
-            return new CircleD(value1.X - value2.X, value1.Y - value2.Y, value1.Radius - value2.Radius);
+            return new CircleM(value1.X - value2.X, value1.Y - value2.Y, value1.Radius - value2.Radius);
         }
 
         /// <summary>
@@ -236,9 +236,9 @@ namespace Velentr.AbstractShapes
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static CircleD operator *(CircleD value1, CircleD value2)
+        public static CircleM operator *(CircleM value1, CircleM value2)
         {
-            return new CircleD(value1.X * value2.X, value1.Y * value2.Y, value1.Radius * value2.Radius);
+            return new CircleM(value1.X * value2.X, value1.Y * value2.Y, value1.Radius * value2.Radius);
         }
 
         /// <summary>
@@ -249,9 +249,9 @@ namespace Velentr.AbstractShapes
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static CircleD operator /(CircleD value1, CircleD value2)
+        public static CircleM operator /(CircleM value1, CircleM value2)
         {
-            return new CircleD(value1.X / value2.X, value1.Y / value2.Y, value1.Radius / value2.Radius);
+            return new CircleM(value1.X / value2.X, value1.Y / value2.Y, value1.Radius / value2.Radius);
         }
 
         /// <summary>
@@ -262,9 +262,9 @@ namespace Velentr.AbstractShapes
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static CircleD operator %(CircleD value1, CircleD value2)
+        public static CircleM operator %(CircleM value1, CircleM value2)
         {
-            return new CircleD(value1.X % value2.X, value1.Y % value2.Y, value1.Radius % value2.Radius);
+            return new CircleM(value1.X % value2.X, value1.Y % value2.Y, value1.Radius % value2.Radius);
         }
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace Velentr.AbstractShapes
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static bool operator ==(CircleD value1, CircleD value2)
+        public static bool operator ==(CircleM value1, CircleM value2)
         {
             return value1.Equals(value2);
         }
@@ -288,47 +288,45 @@ namespace Velentr.AbstractShapes
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static bool operator !=(CircleD value1, CircleD value2)
+        public static bool operator !=(CircleM value1, CircleM value2)
         {
             return !value1.Equals(value2);
         }
 
         /// <summary>
-        ///     Implicit cast that converts the given Circle to a CircleD.
+        ///     Implicit cast that converts the given Circle to a CircleM.
         /// </summary>
         /// <param name="circle">   The circle. </param>
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static implicit operator CircleD(Circle circle)
+        public static implicit operator CircleM(Circle circle)
         {
-            return new CircleD(circle.X, circle.Y, circle.Radius);
+            return new CircleM(circle.X, circle.Y, circle.Radius);
         }
 
         /// <summary>
-        ///     Implicit cast that converts the given CircleM to a CircleD.
+        ///     Implicit cast that converts the given CircleD to a CircleM.
         /// </summary>
         /// <param name="circle">   The circle. </param>
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static implicit operator CircleD(CircleM circle)
+        public static implicit operator CircleM(CircleD circle)
         {
-            return new CircleD(circle.X, circle.Y, circle.Radius);
+            return new CircleM(circle.X, circle.Y, circle.Radius);
         }
 
         /// <summary>
-        ///     Implicit cast that converts the given Point to a CircleD.
+        ///     Implicit cast that converts the given Point to a CircleM.
         /// </summary>
-        ///
         /// <param name="point">    The point. </param>
-        ///
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static implicit operator CircleD(Point point)
+        public static implicit operator CircleM(Point point)
         {
-            return new CircleD(point, 1);
+            return new CircleM(point, 1);
         }
 
         /// <summary>
@@ -340,9 +338,9 @@ namespace Velentr.AbstractShapes
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static implicit operator CircleD(System.Drawing.Point point)
+        public static implicit operator CircleM(System.Drawing.Point point)
         {
-            return new CircleD((Point)point, 1);
+            return new CircleM((PointI)point, 1);
         }
 
         /// <summary>
@@ -354,9 +352,9 @@ namespace Velentr.AbstractShapes
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static implicit operator CircleD(System.Drawing.PointF point)
+        public static implicit operator CircleM(System.Drawing.PointF point)
         {
-            return new CircleD((Point)point, 1);
+            return new CircleM((PointI)point, 1);
         }
 
 #if (MONOGAME || FNA)
@@ -370,9 +368,9 @@ namespace Velentr.AbstractShapes
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        public static implicit operator CircleD(Microsoft.Xna.Framework.Point point)
+        public static implicit operator CircleM(Microsoft.Xna.Framework.Point point)
         {
-            return new CircleD((Point)point, 1);
+            return new CircleM((PointI)point, 1);
         }
 
         /// <summary>
@@ -384,9 +382,9 @@ namespace Velentr.AbstractShapes
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static implicit operator CircleD(Microsoft.Xna.Framework.Vector2 vector)
+        public static implicit operator CircleM(Microsoft.Xna.Framework.Vector2 vector)
         {
-            return new CircleD((Point)vector, 1);
+            return new CircleM((PointI)vector, 1);
         }
 
         /// <summary>
@@ -398,21 +396,21 @@ namespace Velentr.AbstractShapes
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static implicit operator CircleD(Microsoft.Xna.Framework.Vector3 vector)
+        public static implicit operator CircleM(Microsoft.Xna.Framework.Vector3 vector)
         {
-            return new CircleD(vector.X, vector.Y, vector.Z);
+            return new CircleM(vector.X, vector.Y, vector.Z);
         }
 
 #endif
 
         /// <summary>
-        ///     Implicit cast that converts the given CircleD to a string.
+        ///     Implicit cast that converts the given CircleM to a string.
         /// </summary>
         /// <param name="circle">   The circle. </param>
         /// <returns>
         ///     The result of the operation.
         /// </returns>
-        public static implicit operator string(CircleD circle)
+        public static implicit operator string(CircleM circle)
         {
             return circle.ToString();
         }
@@ -428,17 +426,17 @@ namespace Velentr.AbstractShapes
         /// <seealso cref="System.ValueType.Equals(object)" />
         public override bool Equals(object obj)
         {
-            return obj is CircleD && Equals((CircleD)obj);
+            return obj is CircleM && Equals((CircleM) obj);
         }
 
         /// <summary>
-        ///     Tests if this CircleD is considered equal to another.
+        ///     Tests if this CircleM is considered equal to another.
         /// </summary>
         /// <param name="other">    The circle d to compare to this object. </param>
         /// <returns>
         ///     True if the objects are considered equal, false if they are not.
         /// </returns>
-        public bool Equals(CircleD other)
+        public bool Equals(CircleM other)
         {
             return other.X == this.X && other.Y == this.Y && other.Radius == this.Radius;
         }
@@ -494,13 +492,11 @@ namespace Velentr.AbstractShapes
         /// <summary>
         ///     Query if this object intersects the given value.
         /// </summary>
-        ///
         /// <param name="value">    The value. </param>
-        ///
         /// <returns>
         ///     True if it succeeds, false if it fails.
         /// </returns>
-        public bool Intersects(CircleD value)
+        public bool Intersects(CircleM value)
         {
             return Intersects(this, value);
         }
@@ -508,27 +504,23 @@ namespace Velentr.AbstractShapes
         /// <summary>
         ///     Query if this object intersects the given value.
         /// </summary>
-        ///
         /// <param name="value1">   The first instance to compare. </param>
         /// <param name="value2">   The second instance to compare. </param>
-        ///
         /// <returns>
         ///     True if it succeeds, false if it fails.
         /// </returns>
-        public static bool Intersects(CircleD value1, CircleD value2)
+        public static bool Intersects(CircleM value1, CircleM value2)
         {
             var dx = value2.X - value1.X;
             var dy = value2.Y - value1.Y;
 
-            return (dx * dx + dy * dy) <= (value1.Radius * value2.Radius);
+            return dx * dx + dy * dy <= value1.Radius * value2.Radius;
         }
 
         /// <summary>
         ///     Query if this object intersects the given value.
         /// </summary>
-        ///
         /// <param name="value">    The value. </param>
-        ///
         /// <returns>
         ///     True if it succeeds, false if it fails.
         /// </returns>
@@ -538,21 +530,19 @@ namespace Velentr.AbstractShapes
         }
 
         /// <summary>
-        /// Query if this object intersects the given value.
+        ///     Query if this object intersects the given value.
         /// </summary>
-        ///
         /// <param name="circle">       The circle. </param>
         /// <param name="rectangle">    The rectangle. </param>
-        ///
         /// <returns>
-        /// True if it succeeds, false if it fails.
+        ///     True if it succeeds, false if it fails.
         /// </returns>
         public static bool Intersects(Circle circle, RectangleD rectangle)
         {
             var dx = circle.X - MathHelpers.Clamp(circle.X, rectangle.Left, rectangle.Right);
             var dy = circle.Y - MathHelpers.Clamp(circle.Y, rectangle.Top, rectangle.Bottom);
 
-            return (dx * dx + dy * dy) <= circle.Radius;
+            return dx * dx + dy * dy <= circle.Radius;
         }
     }
 }
