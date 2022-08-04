@@ -1,7 +1,7 @@
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Velentr.Miscellaneous.CodeProfiling;
+
+using Velentr.Debugging;
 
 namespace CoreDev
 {
@@ -25,6 +25,15 @@ namespace CoreDev
         {
             base.Initialize();
             _baseTitle = $"{_baseTitle} | FPS: {{0:{_decimals}}} | TPS: {{1:{_decimals}}} | CPU: {{2:{_decimals}}}% | Memory: {{3:{_decimals}}} MB";
+
+            var rectangleA = new Rectangle(0, 0, 1, 1);
+            Velentr.AbstractShapes.Rectangle rectangleA1 = rectangleA;
+            var rectangleA2 = (Velentr.AbstractShapes.Rectangle)rectangleA;
+
+
+            var pointA = new Point(0, 0);
+            Velentr.AbstractShapes.Point pointA1 = pointA;
+            var pointA2 = (Velentr.AbstractShapes.Point)pointA;
         }
 
         protected override void LoadContent()

@@ -30,5 +30,4 @@
     <DefineConstants>GENERIC</DefineConstants>
     <OutputPath>..\release\GENERIC\</OutputPath>
   </PropertyGroup>
-  <Import Project="..\..\Velentr.AbstractShapes\Velentr.AbstractShapes.projitems" Label="Shared" />
 </Project>

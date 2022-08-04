@@ -49,11 +49,11 @@
   <ItemGroup>
     <PackageReference Include="fnalibs" Version="21.7.0" />
     <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="6.0.1" />
-    <PackageReference Include="Velentr.Miscellaneous" Version="1.2.2" />
+    <PackageReference Include="Velentr.Debugging" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FNA\FNA.Core.csproj" />
-    <ProjectReference Include="..\Velentr.BASE.FNA\Velentr.BASE.FNA.csproj" />
+    <ProjectReference Include="..\Velentr.AbstractShapes.FNA\Velentr.AbstractShapes.FNA.csproj" />
   </ItemGroup>
   <ItemGroup>
     <TrimmerRootAssembly Include="Microsoft.Xna.Framework.Content.ContentTypeReader" Visible="false" />

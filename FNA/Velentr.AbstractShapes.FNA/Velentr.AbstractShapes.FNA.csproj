@@ -26,10 +26,20 @@
     <OutputPath>..\release\FNA\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\Velentr.AbstractShapes\Circle.cs" Link="Circle.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\CircleD.cs" Link="CircleD.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\Dimensions.cs" Link="Dimensions.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\MathHelpers.cs" Link="MathHelpers.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\Point.cs" Link="Point.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\PointI.cs" Link="PointI.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\Rectangle.cs" Link="Rectangle.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\RectangleD.cs" Link="RectangleD.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="fnalibs" Version="21.7.0" developmentDependency="true" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Velentr.AbstractShapes\Velentr.AbstractShapes.csproj" />
     <ProjectReference Include="..\FNA\FNA.Core.csproj" PrivateAssets="All" />
   </ItemGroup>
-  <Import Project="..\..\Velentr.AbstractShapes\Velentr.AbstractShapes.projitems" Label="Shared" />
 </Project>

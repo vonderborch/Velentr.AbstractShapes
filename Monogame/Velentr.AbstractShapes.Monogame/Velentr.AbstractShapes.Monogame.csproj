@@ -31,9 +31,18 @@
     <OutputPath>..\release\Monogame\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\Velentr.AbstractShapes\Circle.cs" Link="Circle.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\CircleD.cs" Link="CircleD.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\Dimensions.cs" Link="Dimensions.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\MathHelpers.cs" Link="MathHelpers.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\Point.cs" Link="Point.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\PointI.cs" Link="PointI.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\Rectangle.cs" Link="Rectangle.cs" />
+    <Compile Include="..\..\Velentr.AbstractShapes\RectangleD.cs" Link="RectangleD.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <Import Project="..\..\Velentr.AbstractShapes\Velentr.AbstractShapes.projitems" Label="Shared" />
 </Project>
