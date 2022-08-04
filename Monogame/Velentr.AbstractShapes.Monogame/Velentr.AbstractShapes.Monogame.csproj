@@ -6,8 +6,8 @@
     <Authors>Christian Webber</Authors>
     <Company>Christian Webber</Company>
     <RepositoryUrl>https://github.com/vonderborch/Velentr.AbstractShapes</RepositoryUrl>
-    <PackageTags>Monogame, </PackageTags>
-    <Description>A library to </Description>
+    <PackageTags>Monogame, Shapes, CoreLibrary</PackageTags>
+    <Description>A library containing definitions for a variety of basic shapes, with support for Monogame versions of shapes where applicable.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.0.0</Version>
     <PackageProjectUrl>https://github.com/vonderborch/Velentr.AbstractShapes</PackageProjectUrl>
