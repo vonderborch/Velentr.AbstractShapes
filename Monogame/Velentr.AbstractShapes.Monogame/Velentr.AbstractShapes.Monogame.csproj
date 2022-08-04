@@ -9,11 +9,13 @@
     <PackageTags>Monogame, Shapes, CoreLibrary</PackageTags>
     <Description>A library containing definitions for a variety of basic shapes, with support for Monogame versions of shapes where applicable.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <PackageProjectUrl>https://github.com/vonderborch/Velentr.AbstractShapes</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <FileVersion>1.1.0</FileVersion>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;MONOGAME</DefineConstants>
@@ -31,19 +33,11 @@
     <OutputPath>..\release\Monogame\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\..\Velentr.AbstractShapes\Circle.cs" Link="Circle.cs" />
-    <Compile Include="..\..\Velentr.AbstractShapes\CircleD.cs" Link="CircleD.cs" />
-    <Compile Include="..\..\Velentr.AbstractShapes\CircleM.cs" Link="CircleM.cs" />
-    <Compile Include="..\..\Velentr.AbstractShapes\Dimensions.cs" Link="Dimensions.cs" />
-    <Compile Include="..\..\Velentr.AbstractShapes\MathHelpers.cs" Link="MathHelpers.cs" />
-    <Compile Include="..\..\Velentr.AbstractShapes\Point.cs" Link="Point.cs" />
-    <Compile Include="..\..\Velentr.AbstractShapes\PointI.cs" Link="PointI.cs" />
-    <Compile Include="..\..\Velentr.AbstractShapes\Rectangle.cs" Link="Rectangle.cs" />
-    <Compile Include="..\..\Velentr.AbstractShapes\RectangleD.cs" Link="RectangleD.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Velentr.AbstractShapes\Velentr.AbstractShapes.csproj" />
   </ItemGroup>
 </Project>
